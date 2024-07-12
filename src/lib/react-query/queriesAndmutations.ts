@@ -4,7 +4,6 @@ import {
   useMutation,
   useQueryClient,
   useInfiniteQuery,
-  QueryClient,
 } from "@tanstack/react-query";
 import {
   createUserAccount,
