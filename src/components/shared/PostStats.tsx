@@ -34,6 +34,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
 
   useEffect(() => {
     setIsSaved(!!savedPostRecord);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser]);
 
   const handleLikePost = (
