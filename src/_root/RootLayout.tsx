@@ -2,10 +2,11 @@ import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import TopBar from "@/components/shared/Topbar";
 import { useUserContext } from "@/context/AuthContext";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const RootLayout = () => {
   const { isAuthenticated } = useUserContext();
+  const location = useLocation();
   return (
     <>
       {isAuthenticated ? (
@@ -18,7 +19,7 @@ const RootLayout = () => {
           <Bottombar />
         </div>
       ) : (
-        <Navigate to="/sign-in" />
+        <Navigate to="/sign-in" replace state={{ from: location?.pathname }}/>
       )}
     </>
   );
